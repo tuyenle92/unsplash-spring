@@ -1,11 +1,7 @@
 package org.tuyen.unsplashspring;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.tuyen.unsplashspring.object.Links;
 import org.tuyen.unsplashspring.object.PhotoURLs;
@@ -18,6 +14,10 @@ import reactor.core.publisher.Mono;
 import java.net.MalformedURLException;
 import java.util.List;
 
+@CrossOrigin(originPatterns = {
+        "http://localhost:*",
+        "https://localhost:*"
+})
 @RestController
 @RequestMapping("api")
 public class UnsplashController {
